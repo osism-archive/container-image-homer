@@ -45,4 +45,6 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           VERSION: ${{ matrix.version }}
           REPOSITORY: osism/homer
-        if: github.ref == 'refs/heads/main'
+        if: |
+          github.repository == 'osism/container-image-homer' &&
+          github.ref == 'refs/heads/main'
